@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "25590010314",
+    "project_id": "sample-app-d84d8",
+    "storage_bucket": "sample-app-d84d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25590010314:android:4a7109de04963ec0fd7f33",
+        "android_client_info": {
+          "package_name": "com.hkhiroshi.sample_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25590010314-i2q894ovp2om4an7fl2joq41j5fc4da8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCDv9QGCn4bIk3S_54S-7BMXi3iNGprl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25590010314-i2q894ovp2om4an7fl2joq41j5fc4da8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "25590010314-4s40hms5qh050s9rp9mhtp235e8f2nei.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hkhiroshi.sampleApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

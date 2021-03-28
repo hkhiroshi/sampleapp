@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:sample_app/main_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'book_list_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -51,7 +53,11 @@ class MyApp extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          model.changeText();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BookListPage()),
+                          );
+                          //model.changeText();
                         },
                         child: Text('ボタン'),
                       )
