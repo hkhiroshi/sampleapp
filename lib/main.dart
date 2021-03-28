@@ -86,7 +86,7 @@ class MyApp extends StatelessWidget {
                   iconSize: 100.0,
                   color: Colors.red,
                   onPressed: () {
-                    print('アイコンボタンクリック');
+                    print('アイコンボタンクリックです');
                   },
                 ),
               ),
