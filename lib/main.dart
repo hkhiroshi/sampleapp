@@ -21,52 +21,54 @@ class MyApp extends StatelessWidget {
       home: ChangeNotifierProvider<MainModel>(
         create: (_) => MainModel(),
         child: Scaffold(
-            appBar: AppBar(
-              title: Text('PrimeVideo'),
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 22.0),
-                  child: Text(
-                    '見放題',
-                  ),
+          appBar: AppBar(
+            title: Text('PrimeVideo'),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(top: 22.0),
+                child: Text(
+                  '見放題',
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: IconButton(
-                    icon: const Icon(Icons.toggle_on),
-                    onPressed: () {
-                      print("Clickされました");
-                    },
-                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: IconButton(
+                  icon: const Icon(Icons.toggle_on),
+                  onPressed: () {
+                    print("Clickされました");
+                  },
                 ),
-              ],
-            ),
-            body: Consumer<MainModel>(builder: (context, model, child) {
-                return Center(
-                  child: Column(
-                    children: [
-                      Text(
-                        model.txt,
-                        style: TextStyle(
-                          fontSize: 30.0,
-                        ),
+              ),
+            ],
+          ),
+          body: Consumer<MainModel>(
+            builder: (context, model, child) {
+              return Center(
+                child: Column(
+                  children: [
+                    Text(
+                      model.txt,
+                      style: TextStyle(
+                        fontSize: 30.0,
                       ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => BookListPage()),
-                          );
-                          //model.changeText();
-                        },
-                        child: Text('ボタン'),
-                      )
-                    ],
-                  ),
-                );
-              },
-            ),
-            ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BookListPage()),
+                        );
+                        //model.changeText();
+                      },
+                      child: Text('ボタン'),
+                    )
+                  ],
+                ),
+              );
+            },
+          ),
+        ),
       ),
     );
   }
