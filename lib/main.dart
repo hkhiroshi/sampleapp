@@ -5,8 +5,19 @@ import 'package:sample_app/presentation/main/main_model.dart';
 import 'package:sample_app/presentation/book_list/book_list_page.dart';
 import 'package:sample_app/presentation/signup/signup_page.dart';
 import 'package:sample_app/presentation/login/login_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+/*
+ * Main関数
+ * Firebase.initializeApp() を main() の先頭で初期化する方法
+ * 参考:
+ *   【Flutter】No Firebase App '[DEFAULT]' has been created - call Firebase.initializeApp()の対処法
+ *   https://qiita.com/mamoru_takami/items/87a20d861806a70db29d
+ */
+Future<void> main() async {
+  // runApp()の前にプラグインの初期化
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

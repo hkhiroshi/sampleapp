@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sample_app/presentation/signup/signup_model.dart';
-import 'package:sample_app/domain/Book.dart';
 
 class SignUpPage extends StatelessWidget {
   final mailController = TextEditingController();

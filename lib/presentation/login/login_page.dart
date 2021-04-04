@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sample_app/presentation/login/login_model.dart';
 
-import 'package:sample_app/domain/Book.dart';
-
 class LoginPage extends StatelessWidget {
   final mailController = TextEditingController();
   final passwordController = TextEditingController();
