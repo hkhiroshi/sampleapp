@@ -17,6 +17,11 @@ class BookListPage extends StatelessWidget {
           final books = model.books;
           final listTiles = books
               .map((book) => ListTile(
+                    leading: Image.network(
+                      book.imageURL != null
+                          ? book.imageURL
+                          : 'https://tk.ismcdn.jp/mwimgs/e/b/1140/img_eb31afc9c1fb914d68a7c73b657c7ebe183087.jpg',
+                    ),
                     title: Text(book.title),
                     trailing: IconButton(
                       icon: Icon(Icons.edit),
