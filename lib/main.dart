@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
-import 'package:sample_app/main_model.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'book_list_page.dart';
+import 'package:sample_app/presentation/main/main_model.dart';
+import 'package:sample_app/presentation/book_list/book_list_page.dart';
+import 'package:sample_app/presentation/signup/signup_page.dart';
+import 'package:sample_app/presentation/login/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 22.0),
                 child: Text(
-                  '見放題',
+                  '見放題です',
                 ),
               ),
               Padding(
@@ -59,9 +60,29 @@ class MyApp extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => BookListPage()),
                         );
+                        model.changeText();
+                      },
+                      child: Text('本一覧'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUpPage()),
+                        );
                         //model.changeText();
                       },
-                      child: Text('ボタン'),
+                      child: Text('新規登録'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                        //model.changeText();
+                      },
+                      child: Text('ログイン'),
                     )
                   ],
                 ),

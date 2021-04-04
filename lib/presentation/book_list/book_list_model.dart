@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'Book.dart';
+import 'package:sample_app/domain/Book.dart';
 
 // Domain Model
 class BookListModel extends ChangeNotifier {
@@ -10,8 +10,12 @@ class BookListModel extends ChangeNotifier {
   // https://sbfl.net/blog/2015/01/05/writing-asynchronous-operation-with-future-in-dart/
   Future fetchBooks() async {
     final docs = await Firestore.instance.collection('books').getDocuments();
-    final books = docs.documents.map((doc) => Book(doc['title'])).toList();
+    final books = docs.documents.map((doc) => Book(doc)).toList();
     this.books = books;
     notifyListeners();
+  }
+
+  Future deleteBook(Book book) async {
+    Firestore.instance.collection('books').document(book.documentID).delete();
   }
 }
