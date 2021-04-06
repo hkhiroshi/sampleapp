@@ -5,6 +5,7 @@ import 'package:sample_app/presentation/main/main_model.dart';
 import 'package:sample_app/presentation/book_list/book_list_page.dart';
 import 'package:sample_app/presentation/signup/signup_page.dart';
 import 'package:sample_app/presentation/login/login_page.dart';
+import 'package:sample_app/presentation/ui/ui_sample_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 /*
@@ -94,7 +95,18 @@ class MyApp extends StatelessWidget {
                         //model.changeText();
                       },
                       child: Text('ログイン'),
-                    )
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UISamplePage()),
+                        );
+                        //model.changeText();
+                      },
+                      child: Text('UIサンプル'),
+                    ),
                   ],
                 ),
               );
